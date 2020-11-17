@@ -1,0 +1,374 @@
+@charset "UTF-8";
+@import "./config.scss";
+
+// @media screen and (max-width: 850px) {
+//     .container, body {
+//         width: 100%!important;
+//     }
+//     .welfare-list {
+//         flex-direction: column;
+//     }
+// }
+
+//清除浮动
+.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix{
+    *zoom: 1; 	/*zoom: 1 是ie6清除浮动的方法， * 是ie7以下的版本识别的符号*/
+}
+
+img {
+    vertical-align: top!important;
+}
+
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+
+// position
+.p-r {position: relative;}
+.p-a {position: absolute;}
+
+
+//logo
+.container { 
+    width: $container;
+    margin: 0 auto;
+    @include webkit(box-sizing, border-box);
+}
+.logo {
+    margin:30px 0;
+    a {
+        display: block;
+        height: 100%;
+        img {
+            vertical-align: top;
+        }
+    }
+}
+
+.menu-link {
+    margin-top: 7px;
+    line-height: 22px;
+    a,span,div {
+        float: right;
+    }
+    a { color: $text-gray; }
+    span {
+        margin: 6px 11px 0;
+        width: 1px;
+        height: 12px;
+        background: #cfcfcf;
+    }
+}
+//语言
+.lang {
+    position: relative;
+    width: 53px;
+    height: 22px;
+    text-align: center;
+    color: #aaaaaa;
+    background: #ececec;
+    cursor: pointer;
+    .icon-arrow {
+        display: inline-block;
+        margin-left: 3px;
+        margin-bottom: 3px;
+        width: 4px;
+        height: 4px;
+        border-top: 1px solid #b5b5b5;
+        border-right: 1px solid #b5b5b5;
+        @include webkit(transform, rotate(135deg));
+    }
+    &:hover div{
+        display: block;
+    }
+    div {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 95px;
+        background: #ececec;
+        a {
+            display: inline-block;
+            width: 100%;
+            height: 28px;
+            line-height: 28px;
+            color: #000;
+            &:hover {
+                background: #e0e0e0;
+                color: #00a9b7;
+            }
+        }
+
+    }
+}
+
+// nav
+.current {
+    background-color: $Select-bg;
+}
+.nav-menu {
+    margin: 21px 95px 0 0;
+    .nav-item {
+        position: relative;
+        float: left;
+        &:hover .drop-down-list{
+            display: block;
+        }
+        // 三角
+        &:hover::after {
+            display: block;
+        }
+        &::after {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            @include webkit(transform, translateX(-50%));
+            content: '';
+            border-top: 10px solid $Select-bg;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid transparent;
+            // background-color:  $Select-bg;
+            // @include webkit(transform, rotate(-45deg));
+        }
+        &:hover {
+            a {
+                background-color: $Select-bg;
+            }
+        }
+        >a {
+            display: block;
+            width: 114px;
+            height: 53px;
+            text-align: center;
+            line-height: 53px;
+            font-weight: bold;
+        }
+        .drop-down-list {
+            position: absolute;
+            padding-top: 17px;
+            display: none;
+            z-index: 1;
+            a {
+                display: block; 
+                width: 114px;
+                height: 41px;
+                line-height: 41px;
+                text-align: center;
+                color: #3e3e3e;
+                background-color: $Select-bg;
+                &:hover {
+                    background-color: #eaeaea;
+                }
+            }
+        }
+    }
+}
+
+
+// 底部
+.footer {
+    padding-top: 73px;
+    background: #f8f8f8;
+    #copyright {
+        line-height: 48px;
+        border-top: 1px solid #f3f3f3;
+        color: #898989;
+    }
+}
+
+
+//联系方式
+.footer-address-info {
+    h5 {
+        margin-bottom: 22px;
+        font-size: 24px;
+        color: #818181;
+    }
+    p {
+        line-height: 23px;
+        font-size: 13px;
+        font-family: 'Adobe 黑体 Std';
+        color: #a0a0a0;
+    }
+
+    .share {
+        margin: 40px 0 58px 0;
+        a {
+            float: left;
+            width: 30px;
+            height: 30px;
+            margin-right: 24px;
+            //background-color: #e0e0e0!important;
+            @include webkit(border-radius, 100%);
+            .erweima {
+                display: none;
+                position: absolute;
+                bottom: 120%;
+                left: 50%;
+                width: 68px;
+                height: 68px;
+                padding: 6px;
+                @include webkit(transform, translateX(-50%));
+                // box-shadow: 0 0 4px -2px #000;
+                @include webkit(filter, drop-shadow(0 0 10px rgba(0, 0, 0, .1)));
+                background: #fff;
+                img {
+                    width: 100%;
+                }
+                &::after {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    @include webkit(transform, translateX(-50%));
+                    content: '';
+                    border-top:4px solid #fff;
+                    border-left:4px solid transparent;
+                    border-right:4px solid transparent;
+                }
+            }
+        }
+        a:first-child {
+            background: url(../img/wx.png) #e0e0e0;
+            &:hover {
+                background-color: #dc261b;
+            }
+        }
+        a:last-child {
+            position: relative;
+            background: url(../img/wx.png) no-repeat 100% 0 #e0e0e0;
+            &:hover {
+                background-color: #65cd60;
+                .erweima {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.footer-menu {
+    margin-top: 9px;
+    dl {
+        float: left;
+        margin-left: 35px;
+    }
+    dt {
+        width: 76px;
+        padding-bottom: 19px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ececec;
+        color: #717171;
+        font-family: 'Adobe 黑体 Std';
+    }
+    dd {
+        line-height: 23px;
+        a {color: #898989;}
+    }
+    .weixin-gzh {
+        float: left;
+        padding:5px;
+        background: #fff;
+        margin-left: 33px;
+        margin-right: 27px;
+        width: 68px;
+        height: 68px;
+        img {
+            width: 100%;
+        }
+        p {
+            margin-top: 9px;
+            text-align: center;
+            color: #898989;
+        }
+    }
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
+    to{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+//加载图标
+.loading-wait {
+    text-align: center;
+    .loading-icon {
+        display: inline-block;
+        @include webkit(transform,rotate(0deg));
+        @include webkit(animation,loading 2s linear infinite);
+    }
+}
+
+
+// 公用标题
+.mian-title {
+    text-align: center;
+    h4 {
+        font-size: 26px;
+    }
+    p {
+        margin-top: 14px;
+        color: $text-gray;
+        text-transform: uppercase;
+    }
+    span {
+        display: inline-block;
+        margin: 0 9px;
+        height: 6px;
+        border: 1px solid #cfcfcf;
+    }
+}
+.main-title-color{background-color: #efefef;}
+@for $i from 1 to 101 {
+    .padding-top-#{$i}
+    {
+        padding-top: (1px * $i);
+    }
+}
+
+@for $i from 1 to 101 {
+    .padding-bottom-#{$i}
+    {
+        padding-bottom: (1px * $i);
+    }
+}
+
+
+//查看更多按钮
+.see-more {
+    display: block;
+    width: 92px;
+    line-height: 29px;
+    border: 1px solid #676767;
+    color: #343434;
+    text-align: center;
+    .more-jiantou {
+        margin-left: 6px;
+        color: #404040;
+        vertical-align: middle;
+    }
+
+}

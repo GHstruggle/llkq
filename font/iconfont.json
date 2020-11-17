@@ -1,0 +1,65 @@
+{
+  "id": "1434806",
+  "name": "my",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12550616",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "7674902",
+      "name": "加载",
+      "font_class": "jiazai",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "4397834",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "6186654",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "4421941",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "6401237",
+      "name": "管理",
+      "font_class": "weibiaoti--",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "9870820",
+      "name": "总览",
+      "font_class": "zonglan",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "11036666",
+      "name": "保存表单@2x",
+      "font_class": "baocunbiaodanx",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    }
+  ]
+}
